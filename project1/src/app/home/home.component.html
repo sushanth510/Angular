@@ -1,0 +1,32 @@
+
+<h2 class="text-center">Test1 component</h2>
+<div class="form-group">
+    <label for="data">Enter data</label>
+    <input type="text" name="data" id="data" class="form-control" #ref>
+
+</div>
+
+<button class="btn btn-warning d-block mx-auto" (click)="sendDataToParent(ref.value)">Send to parent</button>
+<h4>Data received from parent is {{v}}</h4>
+<input type="text" [(ngModel)]="name" name="" id="">
+<div>{{name}}</div>
+
+<div>--------------------------------------------------------------------------------------------------------------</div>
+<h1 class="text-center text-success">Child</h1>
+{{v}}
+
+<h3>Current value is {{cv}}</h3>
+<h3>Previous value is {{pv}}</h3>
+
+<table class="table">
+    <thead>
+        <th>UserId</th>
+        <th>Id</th>
+        <th>Title</th>
+    </thead>
+    <tr *ngFor="let obj of data">
+        <td>{{obj}}</td>
+        <td>{{obj}}</td>
+        <td>{{obj}}</td>
+    </tr>
+</table>
