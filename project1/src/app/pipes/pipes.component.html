@@ -1,0 +1,12 @@
+ <p>The hero's birthday is {{ birthday | date |uppercase}}</p>
+<div class="form-group">
+    <label for="">Enter power</label>
+    <input type="text" name="name" id=""[(ngModel)]="power" class="form-control" #ref>
+    <label for="">Enter factor</label>
+    <input type="text" name="name" id="" [(ngModel)]="factor" class="form-control" #ref>
+    
+</div>
+
+<p>
+    Super Hero Power: {{power | exponentialstrength: factor}}
+</p>

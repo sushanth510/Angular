@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+            <h4 class="pb-2">Reactive form and Validators</h4>
+
+            <form [formGroup]="checkoutForm " (ngSubmit)="showData()">
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label>First Name</label>
+                        <input type="text" formControlName="firstName" class="form-control" placeholder="First Name"  />
+                        <span class="alertmsg" *ngIf="checkoutForm.get('firstName').touched && checkoutForm.get('firstName').hasError('required')">* First Name is required</span>
+
+                    </div>
+                    <div class="form-group col-6">
+                        <label>Last Name</label>
+                        <input type="text" formControlName="lastName" class="form-control" placeholder="Last Name"  />
+                        <span class="alertmsg" *ngIf="checkoutForm.get('lastName').touched && checkoutForm.get('lastName').hasError('required')">* Last Name is required</span>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" formControlName="email">
+                    <span class="alertmsg" *ngIf="checkoutForm.get('email').touched && checkoutForm.get('email').hasError('required')">* Email is required</span>
+
+                </div>
+                
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="checkbox" formControlName="terms">
+                    <label class="form-check-label" for="checkbox">Check me out</label>
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]="!checkoutForm.valid">Checkout</button>
+            </form>
+        </div>
+        <div class="col-4" *ngIf="submitVal">
+            <h3 class="display-4">Form Details</h3>
+            <ul>
+                <li>First Name : {{myfrm.firstName}}</li>
+                <li>Last Name : {{myfrm.lastName}}</li>
+                <li>Email : {{myfrm.email}}</li>
+                <li>Quantity : {{myfrm.quantity}}</li>
+                <li>CheckBox : {{myfrm.terms}}</li>
+            </ul>
+        </div>
+    </div>
+</div>

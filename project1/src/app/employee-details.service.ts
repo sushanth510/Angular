@@ -12,6 +12,6 @@ export class EmployeeDetailsService {
       {name:"sushanth",age:"19",city:"chennur"},
       {name:"sushanth",age:"19",city:"chennur"},
       {name:"sushanth",age:"19",city:"chennur"}
-  ]
+    ]
   }
 }

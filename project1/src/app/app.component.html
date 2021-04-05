@@ -1,35 +1,62 @@
-<div class="row container">
-
-
-    <div class="col-sm-6">
-        <h1 class="text-center text-info">Parent component</h1>
-        <div class="form-group">
-            <label for="">Enter data</label>
-            <input type="text" name="name" id="" class="form-control" #ref>
-            <button class="btn btn-success mt-3d-block mx-auto" (click)="sendData(ref.value)">Send to child</button>
-        </div>
-
-        <h4>Data received from child is {{toReceiveDataFromChild}}</h4>
-    </div>
-
-
-    <div class="col-sm-6">
-        <h1>home component</h1>
-        <app-home [v]="data"    (myEvent)="toReceiveDataFromChild=$event"></app-home>
-    </div>
-</div>
-<p>The hero's birthday is {{ birthday | date |uppercase}}</p>
-<div class="form-group">
-    <label for="">Enter power</label>
-    <input type="text" name="name" id=""[(ngModel)]="power" class="form-control" #ref>
-    <label for="">Enter factor</label>
-    <input type="text" name="name" id="" [(ngModel)]="factor" class="form-control" #ref>
+<!-- nav bar -->
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <!-- Brand -->
     
-</div>
+  
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="dataBinding" routerLinkActive="active">Data binding</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="pipes" routerLinkActive="active">pipes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="directives" routerLinkActive="active">directives</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="DI" routerLinkActive="active">Dependency-Injection & Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="http" routerLinkActive="active">HTTP-client</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="reactiveForms" routerLinkActive="active">ReactiveForms</a>
+          </li>
+      </ul>
+    </div>
+  </nav>
 
-<p>
-    Super Hero Power: {{power | exponentialstrength: factor}}
-</p>
+  <p class="text text-center text-primary">welcome to Angular</p>
+
+
+  <div class="container">
+     <!-- place holder of selectors -->
+     <router-outlet></router-outlet>
+  </div>
 
 
 
+
+
+<!--
+
+
+
+
+
+
+
+
+<app-reactiveforms></app-reactiveforms>
+
+
+
+
+ -->

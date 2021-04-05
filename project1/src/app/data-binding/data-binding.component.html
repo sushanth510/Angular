@@ -1,0 +1,20 @@
+<div class="row container">
+
+
+    <div class="col-sm-6">
+        <h1 class="text-center text-info">Parent component</h1>
+        <div class="form-group">
+            <label for="">Enter data</label>
+            <input type="text" name="name" id="" class="form-control" #ref>
+            <button class="btn btn-success mt-3d-block mx-auto" (click)="sendData(ref.value)">Send to child</button>
+        </div>
+
+        <h4>Data received from child is {{toReceiveDataFromChild}}</h4>
+    </div>
+
+
+    <div class="col-sm-6">
+        
+         <app-home [v]="data"    (myEvent)="toReceiveDataFromChild=$event"></app-home> 
+    </div>
+</div>
